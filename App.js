@@ -3,6 +3,7 @@ import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import FoodSearch from "./screens/FoodSearch";
+import RecepieAndMeals from "./screens/RecepieAndMeals";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
@@ -26,6 +27,11 @@ const App = () => {
             <Stack.Screen
               name="FoodSearch"
               component={FoodSearch}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="RecepieAndMeals"
+              component={RecepieAndMeals}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

@@ -29,4 +29,6 @@ export const Border = {
   br_xl: 20,
   br_mini: 15,
   br_11xl: 30,
+  br_11xs_3: 1,
+  br_10xs_7: 3,
 };
