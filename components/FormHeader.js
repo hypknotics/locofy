@@ -1,18 +1,26 @@
 import * as React from "react";
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Pressable, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border, Padding } from "../GlobalStyles";
 
 const FormHeader = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.header}>
       <View style={styles.frame}>
-        <Image
-          style={styles.menuIcon}
-          contentFit="cover"
-          source={require("../assets/menu.png")}
-        />
+        <Pressable
+          style={styles.menu}
+          onPress={() => navigation.navigate("RecepieAndMeals")}
+        >
+          <Image
+            style={styles.icon}
+            contentFit="cover"
+            source={require("../assets/menu.png")}
+          />
+        </Pressable>
         <View style={styles.textParent}>
           <Text style={styles.text}>Breakfast</Text>
           <Image
@@ -36,11 +44,15 @@ const FormHeader = () => {
 };
 
 const styles = StyleSheet.create({
-  menuIcon: {
+  icon: {
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+  },
+  menu: {
     position: "relative",
     width: 40,
     height: 40,
-    overflow: "hidden",
   },
   text: {
     position: "relative",
